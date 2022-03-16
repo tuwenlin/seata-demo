@@ -1,0 +1,42 @@
+server:
+  port: 7900
+  tomcat.uri-encoding: utf-8
+
+spring:
+  application:
+    name: order
+  datasource:
+    jdbcurl: jdbc:postgresql://localhost:5432/postgres?useUnicode=true&characterEncoding=utf-8
+    driver-class-name: org.postgresql.Driver
+    jdbcUrl: jdbc:oracle:thin:@//localhost:1521/orcl
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+#          jdbcUrl: jdbc:mysql://localhost:3307/demo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+#          driver-class-name: com.mysql.cj.jdbc.Driver
+    username: postgres
+    password: root
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 200
+      idle-timeout: 600000
+      onnection-timeout: 30000
+      pool-name: DatebookHikariCP
+seata:
+  application-id: ${spring.application.name}
+  registry:
+    type: eureka
+    eureka:
+      service-url: http://localhost:8761/eureka/
+      weight: 1
+  config:
+    type: file
+  service:
+    vgroup-mapping:
+      default_tx_group: seata-server
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
