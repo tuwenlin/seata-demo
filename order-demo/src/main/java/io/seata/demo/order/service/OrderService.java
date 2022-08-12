@@ -6,11 +6,15 @@ public interface OrderService {
 
     void insertSuccessOracle(Orders order);
 
+    void insertFailOracle(Orders orders);
+
     void updateSuccessOracle(Orders order);
 
     void deleteSuccessOracle(Orders order);
 
     void insertSuccessPG(Orders order);
+
+    void insertFailPG(Orders orders);
 
     void updateSuccessPG(Orders order);
 

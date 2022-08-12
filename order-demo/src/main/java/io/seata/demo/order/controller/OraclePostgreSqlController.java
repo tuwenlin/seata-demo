@@ -24,6 +24,14 @@ public class OraclePostgreSqlController {
         return "success";
     }
 
+    @PostMapping("/insert/fail")
+    @GlobalTransactional
+    public String insertOrderFail(@RequestBody Orders orders) {
+        orderService.insertFailPG(orders);
+//        int i = 1 / 0;
+        return "success";
+    }
+
     @PostMapping("/update/success")
     @GlobalTransactional
     public String updateOrderSuccess(@RequestBody Orders orders) {

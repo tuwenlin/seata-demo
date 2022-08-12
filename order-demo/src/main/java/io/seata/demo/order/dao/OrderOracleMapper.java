@@ -11,8 +11,10 @@ import org.springframework.stereotype.Component;
 @Component
 public interface OrderOracleMapper {
 
-    @Insert("insert into ORDERS (ID,PRODUCT_ID,COUNT,PAY_AMOUNT,ADDRESS) values " +
-            "(#{id,jdbcType=VARCHAR},order_seq.nextval,#{count,jdbcType=NUMERIC},#{payAmount,jdbcType=NUMERIC},#{address,jdbcType=VARCHAR})")
+        @Insert("insert into ORDERS (ID,SEQ,COUNT,PRODUCT_ID,ADDRESS) values " +
+            "(#{id,jdbcType=VARCHAR},order_seq.nextval,#{count,jdbcType=NUMERIC},#{productId,jdbcType=NUMERIC},#{address,jdbcType=VARCHAR})")
+//    @Insert("insert into service_at values " +
+//            "(#{productId,jdbcType=NUMERIC},#{id,jdbcType=VARCHAR},#{id,jdbcType=VARCHAR},#{id,jdbcType=VARCHAR},#{id,jdbcType=VARCHAR},#{id,jdbcType=VARCHAR})")
     int insertOracleSuccess(Orders order);
 
     @Update("update ORDERS set COUNT = COUNT + 1 where product_id = #{productId,jdbcType=VARCHAR}")

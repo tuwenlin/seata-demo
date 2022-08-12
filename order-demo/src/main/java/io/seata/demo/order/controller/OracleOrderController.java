@@ -20,7 +20,13 @@ public class OracleOrderController {
     @GlobalTransactional
     public String insertOrderSuccess(@RequestBody Orders orders) {
         orderService.insertSuccessOracle(orders);
-//        int i = 1 / 0;
+        return "success";
+    }
+
+    @PostMapping("/insert/fail")
+    @GlobalTransactional
+    public String insertOrderFail(@RequestBody Orders orders) {
+        orderService.insertFailOracle(orders);
         return "success";
     }
 

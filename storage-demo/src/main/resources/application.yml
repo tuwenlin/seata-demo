@@ -1,19 +1,19 @@
 server:
-  port: 7900
+  port: 8900
   tomcat.uri-encoding: utf-8
 
 spring:
   application:
-    name: order
+    name: storage
   datasource:
-#    jdbcurl: jdbc:postgresql://localhost:5432/postgres?useUnicode=true&characterEncoding=utf-8
-#    driver-class-name: org.postgresql.Driver
+    #    jdbcurl: jdbc:postgresql://localhost:5432/postgres?useUnicode=true&characterEncoding=utf-8
+    #    driver-class-name: org.postgresql.Driver
     jdbcUrl: jdbc:oracle:thin:@//localhost:1521/orcl
     driver-class-name: oracle.jdbc.driver.OracleDriver
-#          jdbcUrl: jdbc:mysql://localhost:3307/demo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
-#          driver-class-name: com.mysql.cj.jdbc.Driver
-#    username: postgres # pg user
-#    password: root  #pg password
+      #          jdbcUrl: jdbc:mysql://localhost:3307/demo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+      #          driver-class-name: com.mysql.cj.jdbc.Driver
+      #    username: postgres # pg user
+      #    password: root  #pg password
     username: tuwenlin # oracle user
     password: tuwenlin  #oracle password
     type: com.zaxxer.hikari.HikariDataSource

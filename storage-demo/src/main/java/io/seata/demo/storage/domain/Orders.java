@@ -1,4 +1,4 @@
-package io.seata.demo.order.domain;
+package io.seata.demo.storage.domain;
 
 import java.util.Date;
 

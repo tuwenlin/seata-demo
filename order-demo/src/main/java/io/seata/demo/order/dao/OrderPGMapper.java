@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
 @Component
 public interface OrderPGMapper {
 
-    @Insert("insert into orders (id,product_id,count,pay_amount,address) values " +
-            "(#{id,jdbcType=VARCHAR},nextval('orders_seq'),DEFAULT,#{payAmount,jdbcType=NUMERIC},#{address,jdbcType=VARCHAR})")
+    @Insert("insert into orders (id,seq,count,product_id,address) values " +
+            "(#{id,jdbcType=VARCHAR},nextval('orders_seq'),DEFAULT,#{productId,jdbcType=NUMERIC},#{address,jdbcType=VARCHAR})")
     int insertPGSuccess(Orders order);
 
     @Update("update orders set pay_amount = pay_amount + 1 where count = #{count,jdbcType=NUMERIC}")
